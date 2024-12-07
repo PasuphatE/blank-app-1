@@ -1,3 +1,5 @@
 streamlit
 openai
 nltk
+pythainlp
+attacut
