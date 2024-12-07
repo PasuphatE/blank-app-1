@@ -3,7 +3,7 @@ import streamlit as st
 key=""
 with st.sidebar:
     st.title("🎈 Input Your OpenAI API Key 🎈")
-    title = st.text_input("Type your key here", key)
+    title = st.text_input("Type your key here", key,type="password")
     key=title
     if key=="":
         Currkey="None"
