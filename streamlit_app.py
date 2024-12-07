@@ -74,7 +74,7 @@ if yrText!="":
         #obj_tokenized.append(pythainlp.word_tokenize(i,engine='attacut'))
     #obj_tokenized.append(pythainlp.sent_tokenize(i,))
     
-    #obj_tokenized_no_stop_words = []
+    obj_tokenized_no_stop_words = []
     stopset = set(pythainlp.corpus.thai_stopwords())
     #for i in range(len(obj_tokenized)):
     #    for t in obj_tokenized[i]:
