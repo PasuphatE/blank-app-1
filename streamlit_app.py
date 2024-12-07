@@ -67,8 +67,8 @@ if yrText!="":
             line = "".join(re.findall(r"[a-zA-Z0-9ก-์๐-๙\s\u0E30-\u0E39\u0E47\u0E48\u0E31-\u0E3A]", line))
             obj.append(line)
 
-    obj_tokenized=[]
-    for i in obj:
-      obj_tokenized.append(nltk.tokenize.word_tokenize(i))
-      #obj_tokenized.append(pythainlp.sent_tokenize(i,))
-   st.write(obj_tokenized)
+obj_tokenized=[]
+for i in obj:
+    obj_tokenized.append(nltk.tokenize.word_tokenize(i))
+    #obj_tokenized.append(pythainlp.sent_tokenize(i,))
+st.write(obj_tokenized)
