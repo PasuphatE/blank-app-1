@@ -23,7 +23,6 @@ st.write(
 txt = st.text_area(
     "Text to analyze",
     "dfdfdf",
-   height=10,
 )
 
 st.write(f"You wrote {len(txt)} characters.")
