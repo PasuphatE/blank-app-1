@@ -22,6 +22,7 @@ st.write(
 
 txt = st.text_area(
     "Text to analyze",
+    "dfdfdf",
    height=10,
 )
 
