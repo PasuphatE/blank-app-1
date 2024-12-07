@@ -72,12 +72,20 @@ if yrText.strip() != "":
     #        # Retain only the specified characters
     #        line = "".join(re.findall(r"[a-zA-Z0-9ก-์๐-๙\s\u0E30-\u0E39\u0E47\u0E48\u0E31-\u0E3A]", line))
     #        obj.append(line)
-    obj_tokenized = pythainlp.word_tokenize(yrText, engine='attacut')
+    #obj_tokenized = pythainlp.word_tokenize(yrText, engine='attacut')
     #obj_tokenized=[]
     #for i in obj:
         #obj_tokenized.append(nltk.tokenize.word_tokenize(i))
         #obj_tokenized.append(pythainlp.word_tokenize(i,engine='attacut'))
     #obj_tokenized.append(pythainlp.sent_tokenize(i,))
+    try:
+        if all(ord(char) < 128 for char in yrText):  # ถ้าเป็นข้อความภาษาอังกฤษทั้งหมด
+            obj_tokenized = nltk.word_tokenize(yrText)
+        else:  # ถ้าเป็นข้อความภาษาไทยหรือมีผสมภาษาอังกฤษ
+            obj_tokenized = pythainlp.word_tokenize(yrText, engine='attacut')
+    except Exception as e:
+        st.error(f"Error in tokenization: {e}")
+        obj_tokenized = []
     
     obj_tokenized_no_stop_words = []
     stopset = set(pythainlp.corpus.thai_stopwords())
