@@ -60,8 +60,12 @@ import re
 from collections import Counter
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
+import os
 
-nltk.download('punkt')
+nltk_data_path = '/path/to/custom/nltk_data'
+os.environ['NLTK_DATA'] = nltk_data_path
+
+nltk.download('punkt', download_dir=nltk_data_path)
 
 if yrText.strip() != "":
     #obj = []
