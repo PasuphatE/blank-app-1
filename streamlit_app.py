@@ -8,7 +8,7 @@ with st.sidebar:
     else:
         Currkey=key
     title = st.text_input("Type your key here", key)
-    st.write("Your key is", title)
+    st.write("Your current key: ", title)
 
 st.title("🎈 Input Some Text 🎈")
 st.write(
