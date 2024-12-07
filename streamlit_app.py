@@ -31,7 +31,9 @@ txt = st.text_area(
 )
 #st.write(f"You wrote {len(txt)} characters.")
 yrText=txt
-st.write(f"Lastest Text: {yrText}")
+if len(yrText)>100:
+    yrTextshow=yrText[0:100]+"..."
+st.write(f"Lastest Text: {yrTextshow}")
 
 ######OpenAI
 #import openai
