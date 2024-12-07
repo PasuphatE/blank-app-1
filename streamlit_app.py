@@ -52,6 +52,7 @@ st.write(f"Lastest Text: {yrText}")
 import nltk
 import pythainlp
 import attacut
+import re
 
 nltk.download('punkt')
 
