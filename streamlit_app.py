@@ -13,7 +13,7 @@ with st.sidebar:
         showKey=Currkey[0:4]+"..."+Currkey[-4:]
     else:
         showKey=Currkey
-    st.write("Your current key:\n ", showKey)
+    st.write("Your current key:<br> ", showKey)
 
 st.title("🎈 Welcome to Word Cloud Generator 🎈")
 st.write(
