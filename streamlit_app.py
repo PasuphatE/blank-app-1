@@ -80,7 +80,7 @@ if yrText!="":
     #    for t in obj_tokenized[i]:
     #        if t not in stopset:
     #            obj_tokenized_no_stop_words.append(t)
-    for t in obj_tokenized[i]:
+    for t in obj_tokenized:
             if t not in stopset:
                 obj_tokenized_no_stop_words.append(t)
     # นับความถี่ของคำ
