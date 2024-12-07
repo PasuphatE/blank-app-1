@@ -4,4 +4,3 @@ nltk
 pythainlp
 attacut
 wordcloud
-pythainlp.corpus.common
