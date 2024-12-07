@@ -62,6 +62,7 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import os
 import pandas as pd
+import io
 
 
 nltk.download('punkt')
