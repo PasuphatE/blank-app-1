@@ -4,3 +4,4 @@ nltk
 pythainlp
 attacut
 wordcloud
+xlsxwriter
