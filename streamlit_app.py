@@ -101,3 +101,28 @@ if yrText!="":
 #st.write(obj_tokenized)
 #st.write(obj_tokenized_no_stop_words)
 st.write(sorted_word_dict)
+
+
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+
+# ข้อมูลลิสต์ข้อความ
+word_list = word_count2
+word_freq = sorted_word_dict
+# รวมคำจากลิสต์เป็นสตริงเดียว (เว้นวรรคแต่ละคำ)
+text = " ".join(word for word in word_list if word.strip())
+# สร้าง WordCloud โดยกำหนด path ฟอนต์ภาษาไทย
+wordcloud = WordCloud(
+    font_path=font_path,  # กำหนด path ฟอนต์ภาษาไทย
+    width=800,
+    height=400,
+    background_color='white',
+    colormap='viridis'
+).generate_from_frequencies(word_freq)
+
+
+# แสดงผล WordCloud
+plt.figure(figsize=(10, 5))
+plt.imshow(wordcloud, interpolation="bilinear")
+plt.axis("off")
+plt.show()
