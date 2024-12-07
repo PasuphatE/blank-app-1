@@ -58,18 +58,19 @@ nltk.download('punkt')
 
 if yrText!="":
     lines = yrText
-    obj = []
-    for line in lines:
-        line = line.strip()
-        if line:  # Skip empty lines
-            line = re.sub(r"^- |^-\s{1,}|^\s{1,}", "", line)
-            # Retain only the specified characters
-            line = "".join(re.findall(r"[a-zA-Z0-9ก-์๐-๙\s\u0E30-\u0E39\u0E47\u0E48\u0E31-\u0E3A]", line))
-            obj.append(line)
+    #obj = []
+    #for line in lines:
+    #    line = line.strip()
+    #    if line:  # Skip empty lines
+    #       line = re.sub(r"^- |^-\s{1,}|^\s{1,}", "", line)
+    #        # Retain only the specified characters
+    #        line = "".join(re.findall(r"[a-zA-Z0-9ก-์๐-๙\s\u0E30-\u0E39\u0E47\u0E48\u0E31-\u0E3A]", line))
+    #        obj.append(line)
 
-obj_tokenized=[]
-for i in obj:
+    obj_tokenized=pythainlp.word_tokenize(line, engine='attacut')
+#obj_tokenized=[]
+#for i in obj:
     #obj_tokenized.append(nltk.tokenize.word_tokenize(i))
-    obj_tokenized.append(pythainlp.word_tokenize(i,engine='attacut'))
+#    obj_tokenized.append(pythainlp.word_tokenize(i,engine='attacut'))
     #obj_tokenized.append(pythainlp.sent_tokenize(i,))
 st.write(obj_tokenized)
