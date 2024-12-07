@@ -10,7 +10,7 @@ with st.sidebar:
     else:
         Currkey=key
     if len(Currkey)>10:
-        showKey=Currkey[0,4]+"..."
+        showKey=Currkey[0:4]+"..."
     else:
         showKey=Currkey
     st.write("Your current key:\n ", showKey)
