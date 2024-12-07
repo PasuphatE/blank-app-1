@@ -139,10 +139,10 @@ ax.axis("off")
 st.pyplot(fig)
 
 # กล่องข้อความสำหรับกำหนดชื่อไฟล์
-file_name = st.text_input("กำหนดชื่อไฟล์ Excel (ไม่ต้องใส่นามสกุล)", "word_count")
+file_name = st.text_input("File name (without .xlsx)", "word_count")
 
 # สร้างไฟล์ Excel
-if st.button("สร้างไฟล์ Excel และดาวน์โหลด"):
+if st.button("Download word counts (.xlsx)"):
     # สร้าง DataFrame จาก sorted_word_dict
     df = pd.DataFrame(sorted_word_dict.items(), columns=["Word", "Count"])
     # บันทึกลงในไฟล์ Excel
