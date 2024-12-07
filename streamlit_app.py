@@ -69,6 +69,7 @@ if yrText!="":
 
 obj_tokenized=[]
 for i in obj:
-    obj_tokenized.append(nltk.tokenize.word_tokenize(i))
+    #obj_tokenized.append(nltk.tokenize.word_tokenize(i))
+    obj_tokenized.append(pythainlp.word_tokenize(i,engine='attacut'))
     #obj_tokenized.append(pythainlp.sent_tokenize(i,))
 st.write(obj_tokenized)
