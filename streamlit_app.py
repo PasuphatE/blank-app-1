@@ -64,7 +64,8 @@ import os
 
 nltk.download('punkt')
 
-FONT_PATH = "Kanit-Regular.ttf"
+#FONT_PATH = "Kanit-Regular.ttf"
+FONT_PATH = "ChulaCharasNewReg.ttf"
 
 if yrText.strip() != "":
     #obj = []
