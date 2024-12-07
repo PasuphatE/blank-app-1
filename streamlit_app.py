@@ -116,8 +116,8 @@ wordcloud = WordCloud(
         width=800,
         height=400,
         background_color='white',
-        colormap='viridis',
-        font_path=pythainlp.corpus.common.default_thai_font()  # ใช้ฟอนต์ไทย
+        colormap='viridis'
+        #font_path=pythainlp.corpus.common.default_thai_font()  # ใช้ฟอนต์ไทย
     ).generate_from_frequencies(sorted_word_dict)
 
     # แสดงผล Word Cloud
