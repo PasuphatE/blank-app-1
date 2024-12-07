@@ -6,7 +6,7 @@ with st.sidebar:
     if key=="":
         Currkey="None"
     else:
-        Currkey=
+        Currkey=key
     title = st.text_input("Type your key here", key)
     st.write("Your key is", title)
 
