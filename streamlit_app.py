@@ -113,16 +113,17 @@ word_freq = sorted_word_dict
 text = " ".join(word for word in word_list if word.strip())
 # สร้าง WordCloud โดยกำหนด path ฟอนต์ภาษาไทย
 wordcloud = WordCloud(
-    #font_path=font_path,  # กำหนด path ฟอนต์ภาษาไทย
-    width=800,
-    height=400,
-    background_color='white',
-    colormap='viridis'
-).generate_from_frequencies(word_freq)
+        width=800,
+        height=400,
+        background_color='white',
+        colormap='viridis',
+        font_path=pythainlp.corpus.common.default_thai_font()  # ใช้ฟอนต์ไทย
+    ).generate_from_frequencies(sorted_word_dict)
 
-
-# แสดงผล WordCloud
-plt.figure(figsize=(10, 5))
-plt.imshow(wordcloud, interpolation="bilinear")
-plt.axis("off")
-plt.show()
+    # แสดงผล Word Cloud
+    fig, ax = plt.subplots(figsize=(10, 5))
+    ax.imshow(wordcloud, interpolation="bilinear")
+    ax.axis("off")
+    st.pyplot(fig)
+else:
+    st.write("กรุณากรอกข้อความเพื่อสร้าง Word Cloud")
