@@ -83,13 +83,21 @@ if yrText!="":
     for t in obj_tokenized:
             if t not in stopset:
                 obj_tokenized_no_stop_words.append(t)
-    # นับความถี่ของคำ
-    #word_count = Counter(obj_tokenized_no_stop_words)
-    # เรียงคำตามความถี่จากมากไปน้อย
 
-#sorted_word_dict = dict(word_count.most_common())
+    word_count = obj_tokenized_no_stop_words
+    word_count2 = []
+    for word in word_count:
+        word = word.strip()
+        if word:
+            word="".join(re.findall(r"[a-zA-Z0-9ก-์๐-๙\s\u0E30-\u0E39\u0E47\u0E48\u0E31-\u0E3A]", word))
+            word_count2.append(word)
+   
+    # นับความถี่ของคำ
+    word_count = Counter(word_count2)
+    # เรียงคำตามความถี่จากมากไปน้อย
+    sorted_word_dict = dict(word_count.most_common())
     
 
 #st.write(obj_tokenized)
-st.write(obj_tokenized_no_stop_words)
-#st.write(sorted_word_dict)
+#st.write(obj_tokenized_no_stop_words)
+st.write(sorted_word_dict)
