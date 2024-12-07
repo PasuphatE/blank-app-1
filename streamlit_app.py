@@ -15,9 +15,9 @@ with st.sidebar:
         showKey=Currkey
     st.write("Your current key:\n ", showKey)
 
-st.title("🎈 Input Some Text 🎈")
+st.title("🎈 Welcome to Word Cloud Generator 🎈")
 st.write(
-    "This application will help you to create your own world cloud"
+    "This application will help you to create your own world cloud (only English words)"
 )
     
 #messages = st.container(height=300)
