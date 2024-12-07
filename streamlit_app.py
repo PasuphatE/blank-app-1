@@ -121,9 +121,9 @@ wordcloud = WordCloud(
     ).generate_from_frequencies(sorted_word_dict)
 
     # แสดงผล Word Cloud
-    fig, ax = plt.subplots(figsize=(10, 5))
-    ax.imshow(wordcloud, interpolation="bilinear")
-    ax.axis("off")
-    st.pyplot(fig)
-else:
-    st.write("กรุณากรอกข้อความเพื่อสร้าง Word Cloud")
+fig, ax = plt.subplots(figsize=(10, 5))
+ax.imshow(wordcloud, interpolation="bilinear")
+ax.axis("off")
+st.pyplot(fig)
+#else:
+#    st.write("กรุณากรอกข้อความเพื่อสร้าง Word Cloud")
