@@ -74,10 +74,13 @@ if yrText!="":
         #obj_tokenized.append(pythainlp.word_tokenize(i,engine='attacut'))
     #obj_tokenized.append(pythainlp.sent_tokenize(i,))
     
-    obj_tokenized_no_stop_words = []
+    #obj_tokenized_no_stop_words = []
     stopset = set(pythainlp.corpus.thai_stopwords())
-    for i in range(len(obj_tokenized)):
-        for t in obj_tokenized[i]:
+    #for i in range(len(obj_tokenized)):
+    #    for t in obj_tokenized[i]:
+    #        if t not in stopset:
+    #            obj_tokenized_no_stop_words.append(t)
+    for t in obj_tokenized[i]:
             if t not in stopset:
                 obj_tokenized_no_stop_words.append(t)
     # นับความถี่ของคำ
