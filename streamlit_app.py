@@ -33,6 +33,8 @@ txt = st.text_area(
 yrText=txt
 if len(yrText)>100:
     yrTextshow=yrText[0:100]+"..."
+else:
+    yrTextshow=yrText
 st.write(f"Lastest Text: {yrTextshow}")
 
 ######OpenAI
