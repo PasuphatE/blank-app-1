@@ -63,8 +63,7 @@ import matplotlib.pyplot as plt
 
 nltk.download('punkt')
 
-if yrText!="":
-    lines = yrText
+if yrText.strip() != "":
     #obj = []
     #for line in lines:
     #    line = line.strip()
@@ -73,7 +72,7 @@ if yrText!="":
     #        # Retain only the specified characters
     #        line = "".join(re.findall(r"[a-zA-Z0-9ก-์๐-๙\s\u0E30-\u0E39\u0E47\u0E48\u0E31-\u0E3A]", line))
     #        obj.append(line)
-    obj_tokenized=pythainlp.word_tokenize(lines, engine='attacut')
+    obj_tokenized = pythainlp.word_tokenize(yrText, engine='attacut')
     #obj_tokenized=[]
     #for i in obj:
         #obj_tokenized.append(nltk.tokenize.word_tokenize(i))
@@ -95,13 +94,15 @@ if yrText!="":
     for word in word_count:
         word = word.strip()
         if word:
-            word="".join(re.findall(r"[a-zA-Z0-9ก-์๐-๙\s\u0E30-\u0E39\u0E47\u0E48\u0E31-\u0E3A]", word))
+            #word="".join(re.findall(r"[a-zA-Z0-9ก-์๐-๙\s\u0E30-\u0E39\u0E47\u0E48\u0E31-\u0E3A]", word))
+            word = "".join(re.findall(r"[a-zA-Z0-9ก-์๐-๙\s]", word))
             word_count2.append(word)
    
     # นับความถี่ของคำ
     word_count = Counter(word_count2)
     # เรียงคำตามความถี่จากมากไปน้อย
-    sorted_word_dict = dict(word_count.most_common())
+    #sorted_word_dict = dict(word_count.most_common())
+    sorted_word_dict = {k: v for k, v in word_count.items() if k.strip()}
     
 
 #st.write(obj_tokenized)
