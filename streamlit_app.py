@@ -62,10 +62,7 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import os
 
-nltk_data_path = '/path/to/custom/nltk_data'
-os.environ['NLTK_DATA'] = nltk_data_path
-
-nltk.download('punkt', download_dir=nltk_data_path)
+nltk.download('punkt')
 
 if yrText.strip() != "":
     #obj = []
@@ -82,14 +79,10 @@ if yrText.strip() != "":
         #obj_tokenized.append(nltk.tokenize.word_tokenize(i))
         #obj_tokenized.append(pythainlp.word_tokenize(i,engine='attacut'))
     #obj_tokenized.append(pythainlp.sent_tokenize(i,))
-    try:
-        if all(ord(char) < 128 for char in yrText):  # ถ้าเป็นข้อความภาษาอังกฤษทั้งหมด
-            obj_tokenized = nltk.word_tokenize(yrText)
-        else:  # ถ้าเป็นข้อความภาษาไทยหรือมีผสมภาษาอังกฤษ
-            obj_tokenized = pythainlp.word_tokenize(yrText, engine='attacut')
-    except Exception as e:
-        st.error(f"Error in tokenization: {e}")
-        obj_tokenized = []
+    if all(ord(char) < 128 for char in yrText):  # ข้อความภาษาอังกฤษ
+        obj_tokenized = yrText.split()  # ใช้ split() แทน Tokenizer
+    else:  # ข้อความภาษาไทยหรือผสม
+        obj_tokenized = pythainlp.word_tokenize(yrText, engine='newmm')
     
     obj_tokenized_no_stop_words = []
     stopset = set(pythainlp.corpus.thai_stopwords())
