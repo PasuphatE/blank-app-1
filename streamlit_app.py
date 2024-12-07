@@ -31,7 +31,6 @@ yrText=txt
 st.write(f"Lastest Text: {yrText}")
 
 ######OpenAI
-!pip install openai -q
 import openai
 client = openai.OpenAI(api_key=Currkey)
 messages_so_far = [
