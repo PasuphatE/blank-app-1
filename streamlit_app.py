@@ -161,11 +161,11 @@ if st.button("Download word counts (.xlsx)"):
         #    file_name=f"{file_name}.xlsx",
         #    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
         #)
-        output.seek(0)
+    output.seek(0)
 
-        # สร้างลิงก์ดาวน์โหลด
-        st.download_button(
-            label="ดาวน์โหลดไฟล์ Excel",
+    # สร้างลิงก์ดาวน์โหลด
+    st.download_button(
+            label="Download Excel File",
             data=output,
             file_name=f"{file_name}.xlsx",
             mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
