@@ -113,7 +113,7 @@ word_freq = sorted_word_dict
 text = " ".join(word for word in word_list if word.strip())
 # สร้าง WordCloud โดยกำหนด path ฟอนต์ภาษาไทย
 wordcloud = WordCloud(
-    font_path=font_path,  # กำหนด path ฟอนต์ภาษาไทย
+    #font_path=font_path,  # กำหนด path ฟอนต์ภาษาไทย
     width=800,
     height=400,
     background_color='white',
