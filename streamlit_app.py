@@ -115,7 +115,8 @@ if yrText.strip() != "":
 
 #st.write(obj_tokenized)
 #st.write(obj_tokenized_no_stop_words)
-st.write(f"รายละเอียดการนับคำ:\n {sorted_word_dict}")
+st.write(f"Word count details:")
+st.write(sorted_word_dict)
 
 # ข้อมูลลิสต์ข้อความ
 word_list = word_count2
@@ -151,7 +152,7 @@ if st.button("สร้างไฟล์ Excel และดาวน์โห�
         writer.save()
         # สร้างลิงก์ดาวน์โหลด
         st.download_button(
-            label="ดาวน์โหลดไฟล์ Excel",
+            label="Download word counts (.xlsx)",
             data=output.getvalue(),
             file_name=f"{file_name}.xlsx",
             mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
