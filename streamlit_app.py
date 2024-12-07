@@ -153,11 +153,20 @@ if st.button("Download word counts (.xlsx)"):
     #with pd.ExcelWriter(output, engine="xlsxwriter") as writer:
     with pd.ExcelWriter(output, engine="openpyxl") as writer:
         df.to_excel(writer, index=False, sheet_name="Word Count")
-        writer.save()
+        #writer.save()
+        # สร้างลิงก์ดาวน์โหลด
+        #st.download_button(
+        #    label="Download word counts (.xlsx)",
+        #    data=output.getvalue(),
+        #    file_name=f"{file_name}.xlsx",
+        #    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        #)
+        output.seek(0)
+
         # สร้างลิงก์ดาวน์โหลด
         st.download_button(
-            label="Download word counts (.xlsx)",
-            data=output.getvalue(),
+            label="ดาวน์โหลดไฟล์ Excel",
+            data=output,
             file_name=f"{file_name}.xlsx",
             mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
         )
