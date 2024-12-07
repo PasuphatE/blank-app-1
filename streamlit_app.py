@@ -115,7 +115,7 @@ if yrText.strip() != "":
 
 #st.write(obj_tokenized)
 #st.write(obj_tokenized_no_stop_words)
-st.write(sorted_word_dict)
+st.write(f"รายละเอียดการนับคำ:\n {sorted_word_dict}")
 
 # ข้อมูลลิสต์ข้อความ
 word_list = word_count2
@@ -136,5 +136,25 @@ fig, ax = plt.subplots(figsize=(10, 5))
 ax.imshow(wordcloud, interpolation="bilinear")
 ax.axis("off")
 st.pyplot(fig)
-#else:
-#    st.write("กรุณากรอกข้อความเพื่อสร้าง Word Cloud")
+
+# กล่องข้อความสำหรับกำหนดชื่อไฟล์
+    file_name = st.text_input("กำหนดชื่อไฟล์ Excel (ไม่ต้องใส่นามสกุล)", "word_count")
+
+    # สร้างไฟล์ Excel
+    if st.button("สร้างไฟล์ Excel และดาวน์โหลด"):
+        # สร้าง DataFrame จาก sorted_word_dict
+        df = pd.DataFrame(sorted_word_dict.items(), columns=["Word", "Count"])
+
+        # บันทึกลงในไฟล์ Excel
+        output = io.BytesIO()
+        with pd.ExcelWriter(output, engine="xlsxwriter") as writer:
+            df.to_excel(writer, index=False, sheet_name="Word Count")
+            writer.save()
+
+        # สร้างลิงก์ดาวน์โหลด
+        st.download_button(
+            label="ดาวน์โหลดไฟล์ Excel",
+            data=output.getvalue(),
+            file_name=f"{file_name}.xlsx",
+            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        )
