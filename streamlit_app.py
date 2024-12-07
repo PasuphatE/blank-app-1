@@ -54,6 +54,9 @@ import pythainlp
 import attacut
 import re
 from collections import Counter
+from pythainlp.corpus.common import get_file
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
 
 nltk.download('punkt')
 
@@ -101,10 +104,9 @@ if yrText!="":
 #st.write(obj_tokenized)
 #st.write(obj_tokenized_no_stop_words)
 st.write(sorted_word_dict)
+# ใช้ฟอนต์ภาษาไทย
+thai_font_path = get_file("THSarabunNew.ttf")  # โหลดฟอนต์จาก PyThaiNLP
 
-
-from wordcloud import WordCloud
-import matplotlib.pyplot as plt
 
 # ข้อมูลลิสต์ข้อความ
 word_list = word_count2
@@ -116,8 +118,8 @@ wordcloud = WordCloud(
         width=800,
         height=400,
         background_color='white',
-        colormap='viridis'
-        #font_path=pythainlp.corpus.common.default_thai_font()  # ใช้ฟอนต์ไทย
+        colormap='viridis',
+        font_path=thai_font_path  # ใช้ฟอนต์ไทย
     ).generate_from_frequencies(sorted_word_dict)
 
     # แสดงผล Word Cloud
