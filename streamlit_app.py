@@ -5,9 +5,9 @@ st.title("🎈 Input Your OpenAI API Key 🎈")
 st.write(
     "This application will help you to create your own world cloud"
 )
-
-st.title("🎈 Input Some Text 🎈")
-
-prompt = st.chat_input("Type some text here")
-if prompt:
-    st.write(f"User has sent the following prompt: {prompt}")
+with st.sidebar:
+    st.title("🎈 Input Some Text 🎈")
+    messages = st.container(height=300)
+    if prompt := st.chat_input("Type some text here"):
+        messages.chat_message("user").write(prompt)
+        messages.chat_message("assistant").write(f"Echo: {prompt}")
