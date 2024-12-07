@@ -54,7 +54,6 @@ import pythainlp
 import attacut
 import re
 from collections import Counter
-from pythainlp.corpus.common import get_file
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
@@ -119,7 +118,6 @@ wordcloud = WordCloud(
         height=400,
         background_color='white',
         colormap='viridis',
-        font_path=thai_font_path  # ใช้ฟอนต์ไทย
     ).generate_from_frequencies(sorted_word_dict)
 
     # แสดงผล Word Cloud
