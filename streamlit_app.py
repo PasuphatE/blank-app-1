@@ -103,9 +103,6 @@ if yrText!="":
 #st.write(obj_tokenized)
 #st.write(obj_tokenized_no_stop_words)
 st.write(sorted_word_dict)
-# ใช้ฟอนต์ภาษาไทย
-thai_font_path = get_file("THSarabunNew.ttf")  # โหลดฟอนต์จาก PyThaiNLP
-
 
 # ข้อมูลลิสต์ข้อความ
 word_list = word_count2
