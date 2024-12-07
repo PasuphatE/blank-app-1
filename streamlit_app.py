@@ -1,6 +1,7 @@
 import streamlit as st
 
-st.title("🎈 My new app")
+st.title("🎈 Input Your OpenAI API Key 🎈")
+st.title("🎈 Input Some Text 🎈")
 st.write(
-    "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
+    "THis application will help you to create your own world cloud"
 )
