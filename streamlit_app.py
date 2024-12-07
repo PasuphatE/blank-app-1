@@ -81,12 +81,12 @@ if yrText!="":
             if t not in stopset:
                 obj_tokenized_no_stop_words.append(t)
     # นับความถี่ของคำ
-    word_count = Counter(obj_tokenized_no_stop_words)
+    #word_count = Counter(obj_tokenized_no_stop_words)
     # เรียงคำตามความถี่จากมากไปน้อย
 
-sorted_word_dict = dict(word_count.most_common())
+#sorted_word_dict = dict(word_count.most_common())
     
 
 #st.write(obj_tokenized)
-#st.write(obj_tokenized_no_stop_words)
-st.write(sorted_word_dict)
+st.write(obj_tokenized_no_stop_words)
+#st.write(sorted_word_dict)
