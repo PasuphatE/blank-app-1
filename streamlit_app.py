@@ -67,26 +67,24 @@ if yrText!="":
     #        # Retain only the specified characters
     #        line = "".join(re.findall(r"[a-zA-Z0-9ก-์๐-๙\s\u0E30-\u0E39\u0E47\u0E48\u0E31-\u0E3A]", line))
     #        obj.append(line)
-
     obj_tokenized=pythainlp.word_tokenize(lines, engine='attacut')
-#obj_tokenized=[]
-#for i in obj:
-    #obj_tokenized.append(nltk.tokenize.word_tokenize(i))
-#    obj_tokenized.append(pythainlp.word_tokenize(i,engine='attacut'))
+    #obj_tokenized=[]
+    #for i in obj:
+        #obj_tokenized.append(nltk.tokenize.word_tokenize(i))
+        #obj_tokenized.append(pythainlp.word_tokenize(i,engine='attacut'))
     #obj_tokenized.append(pythainlp.sent_tokenize(i,))
-
+    
     obj_tokenized_no_stop_words = []
     stopset = set(pythainlp.corpus.thai_stopwords())
     for i in range(len(obj_tokenized)):
         for t in obj_tokenized[i]:
             if t not in stopset:
-            obj_tokenized_no_stop_words.append(t)
-
+                obj_tokenized_no_stop_words.append(t)
     # นับความถี่ของคำ
     word_count = Counter(obj_tokenized_no_stop_words)
-
     # เรียงคำตามความถี่จากมากไปน้อย
-    sorted_word_dict = dict(word_count.most_common())
+
+sorted_word_dict = dict(word_count.most_common())
     
 
 #st.write(obj_tokenized)
