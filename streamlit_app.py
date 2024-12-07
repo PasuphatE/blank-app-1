@@ -3,12 +3,12 @@ import streamlit as st
 key=""
 with st.sidebar:
     st.title("🎈 Input Your OpenAI API Key 🎈")
+    title = st.text_input("Type your key here", key)
     if key=="":
         Currkey="None"
     else:
         Currkey=key
-    title = st.text_input("Type your key here", key)
-    st.write("Your current key: ", title)
+    st.write("Your current key: ", Currkey)
 
 st.title("🎈 Input Some Text 🎈")
 st.write(
@@ -22,10 +22,8 @@ st.write(
 
 txt = st.text_area(
     "Text to analyze",
-    "dfdfdf",
+    "Input some text here",
 )
-
-st.write(f"You wrote {len(txt)} characters.")
+#st.write(f"You wrote {len(txt)} characters.")
 yrText=txt
-
 st.write(f"Lastest Text: {yrText}")
