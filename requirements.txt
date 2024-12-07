@@ -3,3 +3,4 @@ openai
 nltk
 pythainlp
 attacut
+wordcloud
