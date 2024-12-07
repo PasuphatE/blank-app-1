@@ -27,3 +27,5 @@ txt = st.text_area(
 
 st.write(f"You wrote {len(txt)} characters.")
 yrText=txt
+
+st.write(f"Lastest Text: {yrtxt}")
