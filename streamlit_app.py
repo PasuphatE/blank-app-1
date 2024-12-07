@@ -1,15 +1,15 @@
 import streamlit as st
 
-key=""
+
 with st.sidebar:
     st.title("🎈 Input Your OpenAI API Key 🎈")
     title = st.text_input("Type your key here", key)
     if key=="":
         Currkey="None"
-        st.write("Your current key: ", Currkey)
     else:
         Currkey=key
-        st.write("Your current key: ", Currkey)
+    
+    st.write("Your current key: ", Currkey)
 
 st.title("🎈 Input Some Text 🎈")
 st.write(
