@@ -37,10 +37,10 @@ if len(yrText)>100:
 else:
     yrTextshow=yrText
 #st.write("*Lastest Text*:")
-#st.html(
-#    "<p><u><b>Lastest Text</b></u></p>"
-#)
-#st.write(yrTextshow)
+st.html(
+    "<p><u><b>Lastest Text</b></u></p>"
+)
+st.write(yrTextshow)
 ######OpenAI
 #import openai
 #client = openai.OpenAI(api_key=Currkey)
