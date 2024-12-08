@@ -17,7 +17,7 @@ with st.sidebar:
 
 st.title("🎈 Welcome to Word Cloud Generator 🎈")
 st.write(
-    "This application will help you to create your own world cloud (only English words)"
+    "This application will help you to create your own world cloud"
 )
     
 #messages = st.container(height=300)
