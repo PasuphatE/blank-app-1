@@ -36,10 +36,10 @@ if len(yrText)>100:
 else:
     yrTextshow=yrText
 #st.write("*Lastest Text*:")
-st.html(
-    "<p><u><b>Lastest Text</b></u></p>"
-)
-st.write(yrTextshow)
+#st.html(
+#    "<p><u><b>Lastest Text</b></u></p>"
+#)
+#st.write(yrTextshow)
 ######OpenAI
 #import openai
 #client = openai.OpenAI(api_key=Currkey)
@@ -121,7 +121,10 @@ if yrText.strip() != "":
 
 #st.write(obj_tokenized)
 #st.write(obj_tokenized_no_stop_words)
-st.write(f"Word count details:")
+st.html(
+    "<p><u><b>Word count details</b></u></p>"
+)
+#st.write(f"Word count details:")
 st.write(sorted_word_dict)
 
 # ข้อมูลลิสต์ข้อความ
