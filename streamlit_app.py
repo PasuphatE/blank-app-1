@@ -26,7 +26,7 @@ st.write(
 #    messages.chat_message("assistant").write(f"Echo: {prompt}")
 
 txt = st.text_area(
-    "Text to analyze",
+    "*Text to analyze*",
     "Input some text here",
 )
 #st.write(f"You wrote {len(txt)} characters.")
