@@ -28,7 +28,7 @@ st.write(
 txt = st.text_area(
     "*Text to analyze*",
     "Input some text here",
-    height=300
+    height=30
 )
 #st.write(f"You wrote {len(txt)} characters.")
 yrText=txt
