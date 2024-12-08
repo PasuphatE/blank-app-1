@@ -95,6 +95,7 @@ if yrText.strip() != "":
         obj_tokenized = [word for word in obj_tokenized if word.lower() not in english_stopwords]
     else:  # ข้อความภาษาไทยหรือผสม
         obj_tokenized = pythainlp.word_tokenize(yrText, engine='newmm')
+        obj_tokenized = [word for word in obj_tokenized if word.lower() not in english_stopwords]
     
     obj_tokenized_no_stop_words = []
     stopset = set(pythainlp.corpus.thai_stopwords())
