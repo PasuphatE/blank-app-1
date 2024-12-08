@@ -66,9 +66,11 @@ import matplotlib.pyplot as plt
 import os
 import pandas as pd
 import io
-
+from nltk.corpus import stopwords
 
 nltk.download('punkt')
+nltk.download('stopwords')
+english_stopwords = set(stopwords.words('english'))
 
 #FONT_PATH = "Kanit-Regular.ttf"
 FONT_PATH = "ChulaCharasNewReg.ttf"
@@ -90,6 +92,7 @@ if yrText.strip() != "":
     #obj_tokenized.append(pythainlp.sent_tokenize(i,))
     if all(ord(char) < 128 for char in yrText):  # ข้อความภาษาอังกฤษ
         obj_tokenized = yrText.split()  # ใช้ split() แทน Tokenizer
+        obj_tokenized = [word for word in obj_tokenized if word.lower() not in english_stopwords]
     else:  # ข้อความภาษาไทยหรือผสม
         obj_tokenized = pythainlp.word_tokenize(yrText, engine='newmm')
     
